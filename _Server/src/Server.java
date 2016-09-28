@@ -15,7 +15,6 @@ public class Server {
     private Main main;
     private ServerSocket serverSocket;
     //client threads
-    //private volatile ArrayList<ClientListener> tClientListeners; //ARRAYLIST
     private volatile HashMap<Integer, ClientListener> tClientListeners; //SHASHMAP
     //threads
     private Timer tOutTimer;

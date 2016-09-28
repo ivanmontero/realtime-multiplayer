@@ -25,6 +25,15 @@ public class ClientPacket implements Serializable {
         this.Y = y;
     }
 
+    public ClientPacket(int packetType, String name) {
+        if (packetType != PacketConstants.CONNECTING)
+            throw new UnsupportedOperationException("Incorrect constructor usage");
+        this.TYPE = packetType;
+        this.X = 0;
+        this.Y = 0;
+        //TODO MESSAGE
+    }
+
     public UserData toUserData(){
         if(TYPE != PacketConstants.UPDATE)
             throw new UnsupportedOperationException("Client packet of type " + TYPE + " cannot be made into user data");

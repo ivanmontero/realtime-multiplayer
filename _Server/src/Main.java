@@ -41,6 +41,8 @@ public class Main {
                 case "stop":
                     server.stop();
                     break;
+                case "list":
+                    break;
             }
         }
     }
