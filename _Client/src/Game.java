@@ -49,6 +49,7 @@ public class Game {
         return modified;
     }
 
+
     public synchronized void setModified(boolean modified){
         this.modified = modified;
     }
