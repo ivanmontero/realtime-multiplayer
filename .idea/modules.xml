@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Realtime Multiplayer.iml" filepath="$PROJECT_DIR$/Realtime Multiplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_Client/_Client.iml" filepath="$PROJECT_DIR$/_Client/_Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_Server/_Server.iml" filepath="$PROJECT_DIR$/_Server/_Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_Shared/_Shared.iml" filepath="$PROJECT_DIR$/_Shared/_Shared.iml" />
+    </modules>
+  </component>
+</project>
