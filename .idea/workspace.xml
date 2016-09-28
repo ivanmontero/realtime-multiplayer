@@ -7,65 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e2bce0d-55bf-4548-884b-e8ea8f4b183c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/_Client_jar/_Client.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/_Server_jar/_Server.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Client.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Game.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Input.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Main$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Main$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Main$KeyboardInput.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Main$MouseInput.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Main.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/Player.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/ServerListener.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/ClientListener.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/GameData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/Main.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/Server$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/Server$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/Server.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Shared/ClientPacket.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Shared/PacketConstants.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Shared/ServerPacket.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Shared/UserData$UserDataBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Shared/UserData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/_Client_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/_Server_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Realtime Multiplayer.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/_Client.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/Game.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/Input.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Client/src/ServerListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Server/_Server.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Server/src/ClientListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Server/src/GameData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Server/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Server/src/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Server/src/Server.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Shared/_Shared.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Shared/src/ClientPacket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Shared/src/PacketConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Shared/src/ServerPacket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_Shared/src/UserData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Client/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/_Server/META-INF/MANIFEST.MF" />
-    </list>
+    <list default="true" id="6e2bce0d-55bf-4548-884b-e8ea8f4b183c" name="Default" comment="" />
     <ignored path="Realtime Multiplayer.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -138,7 +80,7 @@
             <entry file="file://$PROJECT_DIR$/_Client/src/Game.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.6496815">
-                  <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+                  <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -698,7 +640,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1162,7 +1104,7 @@
     <entry file="file://$PROJECT_DIR$/_Client/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6496815">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
