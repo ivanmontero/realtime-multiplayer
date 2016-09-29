@@ -23,7 +23,8 @@ public class ClientListener extends Thread{
             ClientPacket cp = (ClientPacket) socketIn.readObject();
             if(cp.TYPE != PacketConstants.CONNECTING)
                 throw new UnsupportedOperationException("Invalid packet type received");
-            name = cp.NAME;
+            name = cp.getName();
+            //System.out.println(name);
             this.socketOut.writeObject(ID);
         } catch (Exception e){
             e.printStackTrace();
