@@ -1,9 +1,12 @@
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
+
 import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Client{
     //client
@@ -32,6 +35,7 @@ public class Client{
             socket = new Socket(serverIP, port);
             socketOut = new ObjectOutputStream(socket.getOutputStream());
             socketIn = new ObjectInputStream(socket.getInputStream());
+            socketOut.writeObject(new ClientPacket(PacketConstants.CONNECTING, getSystemName()));
             clientID = (Integer) socketIn.readObject();
         } catch (Exception e) {
             System.err.println("Failed to connect to server");
@@ -81,5 +85,15 @@ public class Client{
 
     public boolean isConnected(){
         return socket != null && socket.isConnected();
+    }
+
+    private String getSystemName() {
+        Map<String, String> env = System.getenv();
+        if (env.containsKey("COMPUTERNAME"))
+            return env.get("COMPUTERNAME");
+        else if (env.containsKey("HOSTNAME"))
+            return env.get("HOSTNAME");
+        else
+            return "Unknown Computer";
     }
 }

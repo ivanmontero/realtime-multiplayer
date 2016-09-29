@@ -9,6 +9,7 @@ public class ClientListener extends Thread{
     private volatile Socket socket;
     private ObjectInputStream socketIn;
     private ObjectOutputStream socketOut;
+    private String name;
 
     public final int ID;
 
@@ -19,6 +20,10 @@ public class ClientListener extends Thread{
         try{
             this.socketOut = new ObjectOutputStream(socket.getOutputStream());
             this.socketIn = new ObjectInputStream(socket.getInputStream());
+            ClientPacket cp = (ClientPacket) socketIn.readObject();
+            if(cp.TYPE != PacketConstants.CONNECTING)
+                throw new UnsupportedOperationException("Invalid packet type received");
+            name = cp.NAME;
             this.socketOut.writeObject(ID);
         } catch (Exception e){
             e.printStackTrace();
