@@ -20,7 +20,7 @@ public class Main {
             if(input.equals(""))
                 server.connect(DEFAULT_PORT);
             else{
-                int port = 0;
+                int port;
                 try{
                     port = Integer.parseInt(input);
                 } catch (NumberFormatException e){

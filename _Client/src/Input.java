@@ -1,10 +1,13 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 public class Input {
     private static HashMap<Integer, Boolean> keyPressedMap = new HashMap<Integer, Boolean>();
     private static HashMap<Integer, Boolean> mousePressedMap = new HashMap<Integer, Boolean>();
+    private static ArrayList<Character> keyTypedQueue = new ArrayList<Character>();
 
     public static boolean isKeyPressed(int key){
         if(!keyPressedMap.containsKey(key)) {
@@ -22,8 +25,24 @@ public class Input {
         return mousePressedMap.get(mouseButton);
     }
 
+    //public static boolean wasTyped
+
+    public static char nextTyped() {
+        if(keyTypedQueue.isEmpty())
+            throw new NoSuchElementException("No more keys");
+        return keyTypedQueue.remove(0);
+    }
+
+    public static boolean hasNextTyped() {
+        return !keyTypedQueue.isEmpty();
+    }
+
     public static void keyPressed(KeyEvent e){
         keyPressedMap.put(e.getKeyCode(), true);
+    }
+
+    public static void keyTyped(KeyEvent e){
+        keyTypedQueue.add(e.getKeyChar());
     }
 
     public static void keyReleased(KeyEvent e){
@@ -48,9 +67,14 @@ public class Input {
             mousePressedMap.put(i, false);
     }
 
+    public static void resetTyped() {
+        keyTypedQueue.clear();
+    }
+
     public static void reset() {
         resetKeys();
         resetMouse();
+        resetTyped();
     }
 
 }

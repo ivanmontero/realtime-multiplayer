@@ -65,12 +65,6 @@ public class Server {
         tOutTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                /*
-                if(GameData.wasModified()) {
-                    GameData.setModified(false);
-                    sendPacket();
-                }
-                */
                 GameData.update(INTERVAL);
                 sendPacket();
             }
@@ -110,13 +104,6 @@ public class Server {
             ClientListener cl = tClientListeners.get(i);
             cl.sendPacket(GameData.createPacket(cl.ID));
         }
-    }
-    */
-
-    /*
-    //Use for synchronized (one after another) execution of clientlisteners
-    public synchronized void processPacket(ClientPacket clientPacket, int id) {
-        GameData.processPacket(clientPacket, id);
     }
     */
 

@@ -48,8 +48,7 @@ public class Client{
     }
 
     public void sendPacket(ClientPacket cp){
-        if(isConnected() /*&& game.wasModified()*/){
-            //game.setModified(false);
+        if(isConnected()){
             try {
                 socketOut.writeUnshared(cp);
                 socketOut.reset();
