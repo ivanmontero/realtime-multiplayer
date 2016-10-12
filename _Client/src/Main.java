@@ -19,6 +19,7 @@ public class Main extends JPanel implements ActionListener{
 
     public Main(){
         super(true);
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         window = new JFrame("Client");
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.addWindowListener(new WindowAdapter() {
@@ -27,9 +28,9 @@ public class Main extends JPanel implements ActionListener{
                 exit();
             }
         });
+        window.add(this);
         window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         window.setResizable(false);
-        window.add(this);
         window.addKeyListener(new KeyboardInput());
         window.addMouseListener(new MouseInput());
         window.setFocusable(true);
@@ -63,7 +64,7 @@ public class Main extends JPanel implements ActionListener{
     }
 
     public void exit(){
-        client.stop();
+        client.stop(true);
     }
 
     private class KeyboardInput extends KeyAdapter {
@@ -75,6 +76,11 @@ public class Main extends JPanel implements ActionListener{
         @Override
         public void keyReleased(KeyEvent e) {
             Input.keyReleased(e);
+        }
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            Input.keyTyped(e);
         }
     }
 

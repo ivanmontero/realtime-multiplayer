@@ -7,7 +7,6 @@ public class Game {
     private Client client;
     private Player player;
     private ConcurrentHashMap<Integer, UserData> userDatas;
-    //private volatile boolean modified;
 
     public Game(Main main){
         this.main = main;
@@ -16,7 +15,7 @@ public class Game {
     }
 
     public void update(){
-        /*modified = */player.update();
+        player.update();
     }
 
     public void render(Graphics2D g2d){
@@ -36,26 +35,12 @@ public class Game {
         }
     }
 
-    public ClientPacket createPacket(){
+    public ClientPacket createPacket(){ // important
         return new ClientPacket(PacketConstants.UPDATE, player.getX(), player.getY());
     }
 
     public void setClient(Client client) {
         this.client = client;
     }
-
-    /*
-
-
-    public boolean wasModified(){
-        return modified;
-    }
-
-
-    public synchronized void setModified(boolean modified){
-        this.modified = modified;
-    }
-
-    */
 
 }

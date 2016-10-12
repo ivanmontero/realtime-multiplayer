@@ -1,6 +1,3 @@
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
-
-import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -12,7 +9,7 @@ public class Client{
     //client
     private Main main;
     private Game game;
-    private ServerListener serverListener;
+    private ServerListener tServerListener;
     private volatile Socket socket;
     private ObjectInputStream socketIn;
     private ObjectOutputStream socketOut;
@@ -27,7 +24,7 @@ public class Client{
 
     public void start(){
         if(connect())
-            serverListener.start();
+            tServerListener.start();
     }
 
     public boolean connect(){
@@ -42,7 +39,7 @@ public class Client{
             return false;
         }
          System.out.println("Connection accepted.");
-        serverListener = new ServerListener(this, socketIn);
+        tServerListener = new ServerListener(this, socketIn);
         return true;
     }
 
@@ -51,13 +48,13 @@ public class Client{
     }
 
     public void sendPacket(ClientPacket cp){
-        if(isConnected() /*&& game.wasModified()*/){
-            //game.setModified(false);
+        if(isConnected()){
             try {
                 socketOut.writeUnshared(cp);
                 socketOut.reset();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.err.println("Connection lost to server");
+                stop(false);
             }
         }
     }
@@ -72,11 +69,15 @@ public class Client{
         this.game = game;
     }
 
-    public void stop(){
-        sendPacket(new ClientPacket(PacketConstants.CLOSING));
+    public void stop(boolean isConnected){
+        if(isConnected)
+            sendPacket(new ClientPacket(PacketConstants.CLOSING));
+        if(tServerListener != null)
+            tServerListener.interrupt();
         if(socket != null) {
             try {
                 socket.close();
+                socket = null;
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,7 +85,7 @@ public class Client{
     }
 
     public boolean isConnected(){
-        return socket != null && socket.isConnected();
+        return socket != null && !socket.isClosed() && socket.isConnected();
     }
 
     private String getSystemName() {
