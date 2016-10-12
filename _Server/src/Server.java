@@ -73,7 +73,7 @@ public class Server {
     }
 
     public void sendPacket(){
-        if(tClientListeners.isEmpty()) {
+        if(!tClientListeners.isEmpty()) {
             ServerPacket sp = new ServerPacket(GameData.getUserDatas());
             for (int i : tClientListeners.keySet()) {
                 ClientListener cl = tClientListeners.get(i);
