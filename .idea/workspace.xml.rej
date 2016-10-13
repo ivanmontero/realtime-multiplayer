@@ -1,0 +1,19 @@
+diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
+@@ -8,11 +8,15 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="6e2bce0d-55bf-4548-884b-e8ea8f4b183c" name="Default" comment="">
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Client/Client.class" afterPath="$PROJECT_DIR$/out/production/_Client/Client.class" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Client/Game.class" afterPath="$PROJECT_DIR$/out/production/_Client/Game.class" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Shared/ClientPacket.class" afterPath="$PROJECT_DIR$/out/production/_Shared/ClientPacket.class" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Shared/PacketConstants.class" afterPath="$PROJECT_DIR$/out/production/_Shared/PacketConstants.class" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Server/src/Main.java" afterPath="$PROJECT_DIR$/_Server/src/Main.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Client/src/Client.java" afterPath="$PROJECT_DIR$/_Client/src/Client.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Server/src/ClientListener.java" afterPath="$PROJECT_DIR$/_Server/src/ClientListener.java" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Server/src/Server.java" afterPath="$PROJECT_DIR$/_Server/src/Server.java" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Shared/src/ClientPacket.java" afterPath="$PROJECT_DIR$/_Shared/src/ClientPacket.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Shared/src/PacketConstants.java" afterPath="$PROJECT_DIR$/_Shared/src/PacketConstants.java" />
+     </list>
+     <ignored path="Realtime Multiplayer.iws" />
+     <ignored path=".idea/workspace.xml" />

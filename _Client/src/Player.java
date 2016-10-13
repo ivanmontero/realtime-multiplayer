@@ -18,10 +18,10 @@ public class Player {
      */
 
     public void update(){
-        if(Input.isKeyPressed(KeyEvent.VK_ENTER)) { //Make if enter is typed
+        if(Keyboard.isKeyPressed(KeyEvent.VK_ENTER)) { //Make if enter is typed
             if(!chatOn) {
                 chatOn = true;
-                Input.resetTyped();
+                Keyboard.resetTyped();
                 currentText = new StringBuilder();
             } else {
                 //TODO: send text
@@ -29,29 +29,29 @@ public class Player {
             }
         }
         if(!chatOn) {
-            if (Input.isKeyPressed(KeyEvent.VK_A)) {
+            if (Keyboard.isKeyPressed(KeyEvent.VK_A)) {
                 x--;
                 if (x < SIZE / 2)
                     x = SIZE / 2;
             }
-            if (Input.isKeyPressed(KeyEvent.VK_D)) {
+            if (Keyboard.isKeyPressed(KeyEvent.VK_D)) {
                 x++;
                 if (x > Main.WINDOW_WIDTH - SIZE)
                     x = Main.WINDOW_WIDTH - SIZE;
             }
-            if (Input.isKeyPressed(KeyEvent.VK_W)) {
+            if (Keyboard.isKeyPressed(KeyEvent.VK_W)) {
                 y--;
                 if (y < SIZE / 2)
                     y = SIZE / 2;
             }
-            if (Input.isKeyPressed(KeyEvent.VK_S)) {
+            if (Keyboard.isKeyPressed(KeyEvent.VK_S)) {
                 y++;
                 if (y > Main.WINDOW_HEIGHT - 3 * SIZE)
                     y = Main.WINDOW_HEIGHT - 3 * SIZE;
             }
         } else {
-            while(Input.hasNextTyped())
-                currentText.append(Input.nextTyped());
+            while(Keyboard.hasNextTyped())
+                currentText.append(Keyboard.nextTyped());
         }
     }
 

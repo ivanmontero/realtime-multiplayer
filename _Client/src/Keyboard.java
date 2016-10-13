@@ -1,13 +1,12 @@
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
-public class Input {
+public class Keyboard {
     private static HashMap<Integer, Boolean> keyPressedMap = new HashMap<Integer, Boolean>();
-    private static HashMap<Integer, Boolean> mousePressedMap = new HashMap<Integer, Boolean>();
     private static ArrayList<Character> keyTypedQueue = new ArrayList<Character>();
+    private static ArrayList<KeyboardEvent> keyEventQueue = new ArrayList<KeyboardEvent>();
 
     public static boolean isKeyPressed(int key){
         if(!keyPressedMap.containsKey(key)) {
@@ -16,16 +15,6 @@ public class Input {
         }
         return keyPressedMap.get(key);
     }
-
-    public static boolean isMouseButtonPressed(int mouseButton){
-        if(!mousePressedMap.containsKey(mouseButton)){
-            mousePressedMap.put(mouseButton, false);
-            return false;
-        }
-        return mousePressedMap.get(mouseButton);
-    }
-
-    //public static boolean wasTyped
 
     public static char nextTyped() {
         if(keyTypedQueue.isEmpty())
@@ -49,32 +38,40 @@ public class Input {
         keyPressedMap.put(e.getKeyCode(), false);
     }
 
-    public static void mousePressed(MouseEvent e){
-        mousePressedMap.put(e.getButton(), true);
-    }
-
-    public static void mouseReleased(MouseEvent e){
-        mousePressedMap.put(e.getButton(), false);
-    }
 
     public static void resetKeys() {
         for (Integer i : keyPressedMap.keySet())
             keyPressedMap.put(i, false);
     }
 
-    public static void resetMouse() {
-        for (Integer i : mousePressedMap.keySet())
-            mousePressedMap.put(i, false);
-    }
-
     public static void resetTyped() {
         keyTypedQueue.clear();
     }
 
-    public static void reset() {
-        resetKeys();
-        resetMouse();
-        resetTyped();
-    }
 
+
+
+
+
+    private class KeyboardEvent {
+        private KeyEvent event;
+        private boolean state;
+
+        public KeyboardEvent(KeyEvent e, boolean state) {
+            this.event = e;
+            this.state = state;
+        }
+
+        public int getKeyCode() {
+            return event.getKeyCode();
+        }
+
+        public char getKeyChar() {
+            return event.getKeyChar();
+        }
+
+        public boolean getKeyState() {
+            return state;
+        }
+    }
 }

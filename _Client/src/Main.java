@@ -49,7 +49,7 @@ public class Main extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         game.update();
-        if(!client.isConnected() && Input.isKeyPressed(KeyEvent.VK_ESCAPE))
+        if(!client.isConnected() && Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE))
             client.start();
         client.sendPacket();
         repaint();
@@ -70,17 +70,17 @@ public class Main extends JPanel implements ActionListener{
     private class KeyboardInput extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
-            Input.keyPressed(e);
+            Keyboard.keyPressed(e);
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-            Input.keyReleased(e);
+            Keyboard.keyReleased(e);
         }
 
         @Override
         public void keyTyped(KeyEvent e) {
-            Input.keyTyped(e);
+            Keyboard.keyTyped(e);
         }
     }
 
@@ -92,12 +92,12 @@ public class Main extends JPanel implements ActionListener{
 
         @Override
         public void mousePressed(MouseEvent e) {
-            Input.mousePressed(e);
+            Mouse.mousePressed(e);
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            Input.mouseReleased(e);
+            Mouse.mouseReleased(e);
         }
     }
 
