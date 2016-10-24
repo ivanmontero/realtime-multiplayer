@@ -1,12 +1,11 @@
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class Keyboard {
     private static HashMap<Integer, Boolean> keyPressedMap = new HashMap<Integer, Boolean>();
-    private static ArrayList<Character> keyTypedQueue = new ArrayList<Character>();
-    private static ArrayList<KeyboardEvent> keyEventQueue = new ArrayList<KeyboardEvent>();
+    private static Queue<Character> keyTypedQueue = new LinkedList<Character>();
+    private static Queue<KeyboardEvent> keyEventQueue = new LinkedList<KeyboardEvent>();
+    private static KeyboardEvent currentEvent;
 
     public static boolean isKeyPressed(int key){
         if(!keyPressedMap.containsKey(key)) {
@@ -19,15 +18,37 @@ public class Keyboard {
     public static char nextTyped() {
         if(keyTypedQueue.isEmpty())
             throw new NoSuchElementException("No more keys");
-        return keyTypedQueue.remove(0);
+        return keyTypedQueue.remove();
+    }
+
+    public static boolean next() {
+        if(keyEventQueue.isEmpty()) {
+            currentEvent = null;
+            return false;
+        }
+        currentEvent = keyEventQueue.remove();
+        return true;
+    }
+
+    public static boolean getEventKeyState() {
+        return currentEvent.getKeyState();
     }
 
     public static boolean hasNextTyped() {
         return !keyTypedQueue.isEmpty();
     }
 
+    public static int getEventKeyCode() {
+        return currentEvent.getKeyCode();
+    }
+
+    public static char getEventKeyChar() {
+        return currentEvent.getKeyChar();
+    }
+
     public static void keyPressed(KeyEvent e){
         keyPressedMap.put(e.getKeyCode(), true);
+        keyEventQueue.add(new KeyboardEvent(e, true));
     }
 
     public static void keyTyped(KeyEvent e){
@@ -36,25 +57,27 @@ public class Keyboard {
 
     public static void keyReleased(KeyEvent e){
         keyPressedMap.put(e.getKeyCode(), false);
+        keyEventQueue.add(new KeyboardEvent(e, false));
     }
-
 
     public static void resetKeys() {
         for (Integer i : keyPressedMap.keySet())
             keyPressedMap.put(i, false);
+        resetTyped();
+        resetKeyEvents();
     }
 
     public static void resetTyped() {
         keyTypedQueue.clear();
     }
 
+    public static void resetKeyEvents() {
+        keyEventQueue.clear();
+    }
 
-
-
-
-
-    private class KeyboardEvent {
+    private static class KeyboardEvent {
         private KeyEvent event;
+        //true if pressed, false if released
         private boolean state;
 
         public KeyboardEvent(KeyEvent e, boolean state) {

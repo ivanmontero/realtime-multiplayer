@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
+import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
@@ -56,6 +57,7 @@ public class Server {
             return false;
         }
         System.out.println("[INFO] Successfully bound to port " + port);
+        System.out.println(serverSocket.getInetAddress());
         System.out.println("[INFO] Server public IP: " + getPublicIPAddress());
         return true;
     }

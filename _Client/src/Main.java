@@ -64,7 +64,7 @@ public class Main extends JPanel implements ActionListener{
     }
 
     public void exit(){
-        client.stop(true);
+        client.stop();
     }
 
     private class KeyboardInput extends KeyAdapter {

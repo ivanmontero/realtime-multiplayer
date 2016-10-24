@@ -20,7 +20,8 @@ public class ServerListener extends Thread {
             } catch (Exception e){
                 if(client.isConnected()) {
                     System.err.println("Connection lost to server");
-                    client.stop(false);
+                    client.setConnected(false);
+                    client.stop();
                 }
             }
         }

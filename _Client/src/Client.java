@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -6,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Client{
+    public static final boolean DEBUG_MODE = true;
+    public static final String SERVER_IP = "67.170.25.33";
     //client
     private Main main;
     private Game game;
@@ -18,6 +21,8 @@ public class Client{
     private String serverIP = "localhost"; //"67.170.25.33";
     private int port = 1337;
 
+    private volatile boolean isConnected;
+
     public Client(Main main) {
         this.main = main;
     }
@@ -29,7 +34,10 @@ public class Client{
 
     public boolean connect(){
         try{
-            socket = new Socket(serverIP, port);
+            if(DEBUG_MODE)
+                socket = new Socket(serverIP, port);
+            else
+                socket = new Socket(SERVER_IP, port);
             socketOut = new ObjectOutputStream(socket.getOutputStream());
             socketIn = new ObjectInputStream(socket.getInputStream());
             socketOut.writeObject(new ClientPacket(PacketConstants.CONNECTING, getSystemName()));
@@ -39,6 +47,7 @@ public class Client{
             return false;
         }
          System.out.println("Connection accepted.");
+        isConnected = true;
         tServerListener = new ServerListener(this, socketIn);
         return true;
     }
@@ -54,7 +63,8 @@ public class Client{
                 socketOut.reset();
             } catch (IOException e) {
                 System.err.println("Connection lost to server");
-                stop(false);
+                isConnected = false;
+                stop();
             }
         }
     }
@@ -69,7 +79,7 @@ public class Client{
         this.game = game;
     }
 
-    public void stop(boolean isConnected){
+    public void stop(){
         if(isConnected)
             sendPacket(new ClientPacket(PacketConstants.CLOSING));
         if(tServerListener != null)
@@ -84,8 +94,12 @@ public class Client{
         }
     }
 
+    public void setConnected(boolean isConnected) {
+        this.isConnected = isConnected;
+    }
+
     public boolean isConnected(){
-        return socket != null && !socket.isClosed() && socket.isConnected();
+        return isConnected;
     }
 
     private String getSystemName() {

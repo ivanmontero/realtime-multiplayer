@@ -2,7 +2,6 @@ import java.awt.event.MouseEvent;
 import java.util.HashMap;
 
 public class Mouse {
-
     private static HashMap<Integer, Boolean> mousePressedMap = new HashMap<Integer, Boolean>();
 
     public static boolean isMouseButtonPressed(int mouseButton){
@@ -12,7 +11,6 @@ public class Mouse {
         }
         return mousePressedMap.get(mouseButton);
     }
-
 
     public static void mousePressed(MouseEvent e){
         mousePressedMap.put(e.getButton(), true);
