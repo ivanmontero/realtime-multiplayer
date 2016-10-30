@@ -3,18 +3,29 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class GameData { // Managing of all user data
     private static ConcurrentHashMap<Integer, UserData> userDatas = new ConcurrentHashMap<Integer, UserData>();
+    private static ConcurrentHashMap<Integer, Integer> messageDurations  = new ConcurrentHashMap<Integer, Integer>();
 
-    public static final int MESSAGE_TIME = 16 * 60 * 10; // for messages
+    public static final int MESSAGE_TIME = 16 * 60 * 5; // for messages
 
     public static void update(int delta) {
-
+        for(int key : messageDurations.keySet()) {
+            messageDurations.put(key, messageDurations.get(key) + delta);
+            if (messageDurations.get(key) > MESSAGE_TIME) {
+                messageDurations.remove(key);
+                userDatas.get(key).setMessage("");
+            }
+        }
     }
 
     public static void updateUserData(int id, UserData ud){
         if(!userDatas.containsKey(id)) {
             userDatas.put(id, ud);
-        } else
-            userDatas.get(id).updateData(ud);
+        } else {
+            userDatas.get(id).serverUpdateData(ud);
+        }
+        if(ud.hasMessage()) {
+            messageDurations.put(id, 0);
+        }
     }
 
     public static HashMap<Integer, UserData> getUserDatas(){
@@ -23,6 +34,7 @@ public class GameData { // Managing of all user data
 
     public static void removeData(int id){
         userDatas.remove(id);
+        messageDurations.remove(id);
     }
 
     public static UserData get(int id){

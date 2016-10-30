@@ -10,6 +10,7 @@ public class ClientListener extends Thread{
     private ObjectInputStream socketIn;
     private ObjectOutputStream socketOut;
     private String name;
+    private volatile boolean isConnected;
 
     public final int ID;
 
@@ -29,37 +30,39 @@ public class ClientListener extends Thread{
         } catch (Exception e){
             e.printStackTrace();
         }
+        isConnected = true;
     }
 
     @Override
     public void run(){
-        if(isConnected()) {
-            while (!Thread.currentThread().isInterrupted()) {
-                try {
-                    ClientPacket cp = (ClientPacket) socketIn.readObject();
-                    server.processPacket(ID, cp);
-                    //gameData.processPacket(cp, ID);   //for instantaneous modification
-                    //server.processPacket(cp, ID);     //for synchronized modification
-                } catch (Exception e){
-                    close(); //TODO better handling
+        while (isConnected && !Thread.currentThread().isInterrupted()) {
+            try {
+                ClientPacket cp = (ClientPacket) socketIn.readObject();
+                if(cp.hasMessage()) {
+                    System.out.println("[ID:" + ID + ", name:" + name +"] " + cp.getMessage());
                 }
+                server.processPacket(ID, cp);
+                //gameData.processPacket(cp, ID);   //for instantaneous modification
+                //server.processPacket(cp, ID);     //for synchronized modification
+            } catch (Exception e){
+                isConnected = false; //TODO better handling
             }
         }
     }
 
-    public boolean sendPacket(ServerPacket sp){
+    public void sendPacket(ServerPacket sp){
         try{
             socketOut.writeUnshared(sp);
             socketOut.reset();
         } catch (IOException e) {
             e.printStackTrace(); //TODO handle
-            return false;
+            isConnected = false;
         }
-        return true;
     }
 
     public void close(){
         interrupt();
+        isConnected = false;
         try{
             socket.close();
         } catch (Exception e){
@@ -68,7 +71,7 @@ public class ClientListener extends Thread{
     }
 
     public boolean isConnected(){
-        return socket != null && socket.isConnected();
+        return isConnected;
     }
 
 }

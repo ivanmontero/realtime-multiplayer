@@ -1,6 +1,8 @@
 import java.awt.event.KeyEvent;
 import java.util.*;
 
+//TODO: Shift to keybinds
+
 public class Keyboard {
     private static HashMap<Integer, Boolean> keyPressedMap = new HashMap<Integer, Boolean>();
     private static Queue<Character> keyTypedQueue = new LinkedList<Character>();
@@ -49,6 +51,7 @@ public class Keyboard {
     public static void keyPressed(KeyEvent e){
         keyPressedMap.put(e.getKeyCode(), true);
         keyEventQueue.add(new KeyboardEvent(e, true));
+
     }
 
     public static void keyTyped(KeyEvent e){
@@ -75,6 +78,10 @@ public class Keyboard {
         keyEventQueue.clear();
     }
 
+    public static KeyEvent getKeyEvent() {
+        return currentEvent.getKeyEvent();
+    }
+
     private static class KeyboardEvent {
         private KeyEvent event;
         //true if pressed, false if released
@@ -95,6 +102,10 @@ public class Keyboard {
 
         public boolean getKeyState() {
             return state;
+        }
+
+        public KeyEvent getKeyEvent() {
+            return event;
         }
     }
 }

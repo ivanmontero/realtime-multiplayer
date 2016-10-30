@@ -8,6 +8,7 @@ public class ClientPacket implements Serializable {
     private String name;
     //data for update
     private int x, y;
+    private String message;
 
     public ClientPacket(int packetType){
         this.TYPE = packetType;
@@ -25,6 +26,13 @@ public class ClientPacket implements Serializable {
         this.y = y;
     }
 
+    public ClientPacket(int packetType, int x, int y, String message){
+        this.TYPE = packetType;
+        this.x = x;
+        this.y = y;
+        this.message = message;
+    }
+
     public ClientPacket(int packetType, String name) { //Use to send client data
         if (packetType != PacketConstants.CONNECTING)
             throw new IllegalArgumentException("Incorrect constructor usage");
@@ -35,7 +43,7 @@ public class ClientPacket implements Serializable {
     public UserData toUserData(){
         if(TYPE != PacketConstants.UPDATE)
             throw new UnsupportedOperationException("Client packet of type " + TYPE + " cannot be made into user data");
-        return new UserData(x, y);
+        return new UserData(x, y, message);
     }
 
     public String getName() {
@@ -48,5 +56,13 @@ public class ClientPacket implements Serializable {
 
     public int getY() {
         return y;
+    }
+
+    public boolean hasMessage() {
+        return TYPE == PacketConstants.UPDATE && !message.isEmpty();
+    }
+
+    public String getMessage() {
+        return message;
     }
 }

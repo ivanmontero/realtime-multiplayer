@@ -57,7 +57,6 @@ public class Server {
             return false;
         }
         System.out.println("[INFO] Successfully bound to port " + port);
-        System.out.println(serverSocket.getInetAddress());
         System.out.println("[INFO] Server public IP: " + getPublicIPAddress());
         return true;
     }
@@ -79,7 +78,8 @@ public class Server {
             ServerPacket sp = new ServerPacket(GameData.getUserDatas());
             for (int i : tClientListeners.keySet()) {
                 ClientListener cl = tClientListeners.get(i);
-                if (!cl.sendPacket(sp)) {
+                cl.sendPacket(sp);
+                if(!cl.isConnected()) {
                     disconnectClient(i);
                 }
             }
@@ -95,8 +95,6 @@ public class Server {
         } catch(Exception e){
             e.printStackTrace();
         }
-
-
     }
 
     /*

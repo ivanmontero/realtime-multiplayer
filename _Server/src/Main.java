@@ -40,6 +40,7 @@ public class Main {
             switch(cmds[0]){
                 case "stop":
                     server.stop();
+                    exit();
                     break;
                 case "list":
                     break;

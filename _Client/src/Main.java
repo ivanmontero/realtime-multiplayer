@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.InetAddress;
 
 /**
  * TODO list
@@ -10,6 +11,8 @@ import java.awt.event.*;
  */
 
 public class Main extends JPanel implements ActionListener{
+    private static Main instance;
+
     public static final int WINDOW_WIDTH = 500;
     public static final int WINDOW_HEIGHT = 500;
     private JFrame window;
@@ -17,7 +20,7 @@ public class Main extends JPanel implements ActionListener{
     private Client client;
     private Timer timer;
 
-    public Main(){
+    private Main(){
         super(true);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         window = new JFrame("Client");
@@ -29,10 +32,11 @@ public class Main extends JPanel implements ActionListener{
             }
         });
         window.add(this);
-        window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        window.setSize(WINDOW_WIDTH + 6, WINDOW_HEIGHT + 28);
         window.setResizable(false);
         window.addKeyListener(new KeyboardInput());
         window.addMouseListener(new MouseInput());
+        window.setFocusTraversalKeysEnabled(false);
         window.setFocusable(true);
         window.setVisible(true);
 
@@ -102,11 +106,36 @@ public class Main extends JPanel implements ActionListener{
     }
 
     public static void main(String[] args){
+        Font font = new Font(Font.MONOSPACED, Font.PLAIN, 15);
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            System.err.println("could not get system look and feel");
+        }
+        UIManager.put("OptionPane.messageFont", font);
+        UIManager.put("OptionPane.buttonFont", font);
+        JOptionPane.showMessageDialog(null,
+                "W,A,S,D  - Move character\n" +
+                "ENTER    - Open chat box/Send Message\n" +
+                "ESC      - Connect to server\n" +
+                "TAB      - Show controls", "Controls", JOptionPane.INFORMATION_MESSAGE);
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new Main();
+                instance = new Main();
             }
         });
+    }
+
+    public int getStringWidth(String str) {
+        return getGraphics().getFontMetrics(getFont()).stringWidth(str);
+    }
+
+    public FontMetrics getFontMetrics() {
+        return getGraphics().getFontMetrics();
+    }
+
+    public Main getInstance() {
+        return instance;
     }
 
     /* //Test

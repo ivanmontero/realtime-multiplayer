@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,6 +72,7 @@ public class Client{
 
     public synchronized void processPacket(ServerPacket sp){
         HashMap<Integer, UserData> uds = sp.getUserDatas();
+        game.updateClientData(uds.get(clientID));
         uds.remove(clientID);
         game.updateUserDatas(uds);
     }
@@ -103,6 +105,7 @@ public class Client{
     }
 
     private String getSystemName() {
+        /*
         Map<String, String> env = System.getenv();
         if (env.containsKey("COMPUTERNAME"))
             return env.get("COMPUTERNAME");
@@ -110,5 +113,11 @@ public class Client{
             return env.get("HOSTNAME");
         else
             return "Unknown Computer";
+            */
+        try {
+            return InetAddress.getLocalHost().getHostName();
+        } catch (Exception e) {
+            return "UNKNOWN";
+        }
     }
 }
