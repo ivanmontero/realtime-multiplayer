@@ -20,7 +20,7 @@ public class Game {
         messageToSend = "";
     }
 
-    public void update(){
+    public void update(int delta){
         if(!chatOn) {
             player.update();
         }
@@ -103,15 +103,6 @@ public class Game {
             g2d.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 15));
             g2d.drawString("ESC to connect", 0, main.getFontMetrics().getAscent());
         }
-        /*
-        if(Keyboard.isKeyPressed(KeyEvent.VK_TAB)) {
-            //TODO: Controls
-        } else {
-            g2d.drawString("TAB - Controls",
-                    main.getWidth() - main.getStringWidth("TAB - Controls"),
-                    main.getFontMetrics().getAscent());
-        }
-        */
     }
 
     public void updateUserDatas(HashMap<Integer, UserData> uds){

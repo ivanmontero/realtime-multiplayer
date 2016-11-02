@@ -42,8 +42,6 @@ public class ClientListener extends Thread{
                     System.out.println("[ID:" + ID + ", name:" + name +"] " + cp.getMessage());
                 }
                 server.processPacket(ID, cp);
-                //gameData.processPacket(cp, ID);   //for instantaneous modification
-                //server.processPacket(cp, ID);     //for synchronized modification
             } catch (Exception e){
                 isConnected = false; //TODO better handling
             }
@@ -55,7 +53,7 @@ public class ClientListener extends Thread{
             socketOut.writeUnshared(sp);
             socketOut.reset();
         } catch (IOException e) {
-            e.printStackTrace(); //TODO handle
+            //e.printStackTrace(); //TODO handle
             isConnected = false;
         }
     }

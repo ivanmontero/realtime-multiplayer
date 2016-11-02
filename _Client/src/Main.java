@@ -52,7 +52,7 @@ public class Main extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        game.update();
+        game.update(16);
         if(!client.isConnected() && Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE))
             client.start();
         client.sendPacket();
