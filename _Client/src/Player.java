@@ -40,7 +40,7 @@ public class Player {
         g2d.setColor(Color.GREEN);
         g2d.fillRect(x - SIZE/2, y - SIZE/2, SIZE, SIZE);
         g2d.setColor(Color.BLACK);
-        g2d.drawString("x: " + x + "   y: " + y, 250, 300);
+        //g2d.drawString("x: " + x + "   y: " + y, 250, 300);
         g2d.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 10));
         //TODO: Text splitting
         g2d.drawString(text, x - g2d.getFontMetrics().stringWidth(text) / 2, y - 8);
