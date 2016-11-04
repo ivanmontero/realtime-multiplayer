@@ -1,13 +1,14 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Game {
     private Main main;
     private Client client;
     private Player player;
-    private ConcurrentHashMap<Integer, UserData> userDatas;
+    private Map<Integer, UserData> userDatas;
     private boolean chatOn;
     private StringBuilder currentText;
     private volatile String messageToSend;
@@ -105,7 +106,7 @@ public class Game {
         }
     }
 
-    public void updateUserDatas(HashMap<Integer, UserData> uds){
+    public void updateUserDatas(Map<Integer, UserData> uds){
         for(int i : uds.keySet()){
             if(!userDatas.containsKey(i))
                 userDatas.put(i, uds.get(i));

@@ -1,9 +1,10 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GameData { // Managing of all user data
-    private static ConcurrentHashMap<Integer, UserData> userDatas = new ConcurrentHashMap<Integer, UserData>();
-    private static ConcurrentHashMap<Integer, Integer> messageDurations  = new ConcurrentHashMap<Integer, Integer>();
+    private static Map<Integer, UserData> userDatas = new ConcurrentHashMap<Integer, UserData>();
+    private static Map<Integer, Integer> messageDurations  = new ConcurrentHashMap<Integer, Integer>();
 
     public static final int MESSAGE_TIME = 16 * 60 * 5; // for messages
 
@@ -28,7 +29,7 @@ public class GameData { // Managing of all user data
         }
     }
 
-    public static HashMap<Integer, UserData> getUserDatas(){
+    public static Map<Integer, UserData> getUserDatas(){
         return new HashMap<Integer, UserData>(userDatas);
     }
 

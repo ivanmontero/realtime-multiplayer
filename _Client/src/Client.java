@@ -71,7 +71,7 @@ public class Client{
     }
 
     public synchronized void processPacket(ServerPacket sp){
-        HashMap<Integer, UserData> uds = sp.getUserDatas();
+        Map<Integer, UserData> uds = sp.getUserDatas();
         game.updateClientData(uds.get(clientID));
         uds.remove(clientID);
         game.updateUserDatas(uds);
