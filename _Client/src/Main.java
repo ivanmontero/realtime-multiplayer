@@ -12,6 +12,7 @@ import java.net.InetAddress;
 
 public class Main extends JPanel implements ActionListener{
     private static Main instance;
+    private static boolean isLocalhost;
 
     public static final int WINDOW_WIDTH = 500;
     public static final int WINDOW_HEIGHT = 500;
@@ -106,6 +107,9 @@ public class Main extends JPanel implements ActionListener{
     }
 
     public static void main(String[] args){
+        if(args.length > 0 && args[0].equals("localhost")) {
+            isLocalhost = true;
+        }
         Font font = new Font(Font.MONOSPACED, Font.PLAIN, 15);
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -134,7 +138,11 @@ public class Main extends JPanel implements ActionListener{
         return getGraphics().getFontMetrics();
     }
 
-    public Main getInstance() {
+    public static boolean isLocalHost() {
+        return isLocalhost;
+    }
+
+    public static Main getInstance() {
         return instance;
     }
 

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Client{
-    public static final boolean DEBUG_MODE = true;
+    public static final boolean DEBUG_MODE = false;
     public static final String SERVER_IP = "67.170.25.33";
     //client
     private Main main;
@@ -21,6 +21,7 @@ public class Client{
     //server info
     private String serverIP = "localhost"; //"67.170.25.33";
     private int port = 1337;
+    private boolean localhost = false;
 
     private volatile boolean isConnected;
 
@@ -35,7 +36,7 @@ public class Client{
 
     public boolean connect(){
         try{
-            if(DEBUG_MODE)
+            if(DEBUG_MODE || Main.isLocalHost())
                 socket = new Socket(serverIP, port);
             else
                 socket = new Socket(SERVER_IP, port);
@@ -119,5 +120,6 @@ public class Client{
         } catch (Exception e) {
             return "UNKNOWN";
         }
+
     }
 }

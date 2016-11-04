@@ -10,16 +10,9 @@
     <list default="true" id="6e2bce0d-55bf-4548-884b-e8ea8f4b183c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jars/_Client.jar" afterPath="$PROJECT_DIR$/Jars/_Client.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jars/_Server.jar" afterPath="$PROJECT_DIR$/Jars/_Server.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Client/Client.class" afterPath="$PROJECT_DIR$/out/production/_Client/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Client/Game.class" afterPath="$PROJECT_DIR$/out/production/_Client/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Server/GameData.class" afterPath="$PROJECT_DIR$/out/production/_Server/GameData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Server/Server.class" afterPath="$PROJECT_DIR$/out/production/_Server/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/_Shared/ServerPacket.class" afterPath="$PROJECT_DIR$/out/production/_Shared/ServerPacket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jars/_Client_start.bat" afterPath="$PROJECT_DIR$/Jars/_Client_start.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Client/src/Client.java" afterPath="$PROJECT_DIR$/_Client/src/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Client/src/Game.java" afterPath="$PROJECT_DIR$/_Client/src/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Server/src/GameData.java" afterPath="$PROJECT_DIR$/_Server/src/GameData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Shared/src/ServerPacket.java" afterPath="$PROJECT_DIR$/_Shared/src/ServerPacket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_Client/src/Main.java" afterPath="$PROJECT_DIR$/_Client/src/Main.java" />
     </list>
     <ignored path="Realtime Multiplayer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,15 +36,27 @@
     <splitter split-orientation="horizontal" split-proportion="0.49596024">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/_Client/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.16887417">
+                  <caret line="56" column="78" selection-start-line="56" selection-start-column="78" selection-end-line="56" selection-end-column="78" />
                   <folding>
                     <element signature="class#KeyboardInput#0;class#Main#0" expanded="false" />
                     <element signature="class#MouseInput#0;class#Main#0" expanded="false" />
+                    <element signature="e#3978#3979#0" expanded="true" />
+                    <element signature="e#4012#4013#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_Server_start.bat" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Jars/_Server_start.bat">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -60,7 +65,7 @@
             <entry file="file://$PROJECT_DIR$/_Client/src/Keyboard.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+                  <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -93,16 +98,16 @@
             <entry file="file://$PROJECT_DIR$/_Client/src/Client.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+                  <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/_Client/src/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24944812">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
                   <folding />
                 </state>
@@ -133,10 +138,10 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/_Server/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state vertical-scroll-proportion="0.18763797">
                   <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
                   <folding />
                 </state>
@@ -166,10 +171,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UserData.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="UserData.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/_Shared/src/UserData.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4878587">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
                   <folding>
                     <element signature="e#1683#1684#0" expanded="true" />
@@ -222,12 +227,13 @@
         <option value="$PROJECT_DIR$/_Shared/src/ClientPacket.java" />
         <option value="$PROJECT_DIR$/_Shared/src/UserData.java" />
         <option value="$PROJECT_DIR$/_Client/src/Player.java" />
-        <option value="$PROJECT_DIR$/_Client/src/Main.java" />
         <option value="$PROJECT_DIR$/_Server/src/ClientListener.java" />
         <option value="$PROJECT_DIR$/_Server/src/GameData.java" />
         <option value="$PROJECT_DIR$/_Shared/src/ServerPacket.java" />
-        <option value="$PROJECT_DIR$/_Client/src/Client.java" />
         <option value="$PROJECT_DIR$/_Client/src/Game.java" />
+        <option value="$PROJECT_DIR$/_Client/src/Main.java" />
+        <option value="$PROJECT_DIR$/_Client/src/Client.java" />
+        <option value="$PROJECT_DIR$/Jars/_Client_start.bat" />
       </list>
     </option>
   </component>
@@ -286,6 +292,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Realtime Multiplayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Realtime Multiplayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Realtime Multiplayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jars" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -782,22 +802,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_Server/src/ClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_Shared/src/ClientPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_Shared/src/PacketConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -826,6 +830,8 @@
           <folding>
             <element signature="class#KeyboardInput#0;class#Main#0" expanded="false" />
             <element signature="class#MouseInput#0;class#Main#0" expanded="false" />
+            <element signature="e#3978#3979#0" expanded="true" />
+            <element signature="e#4012#4013#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -837,6 +843,8 @@
           <folding>
             <element signature="class#KeyboardInput#0;class#Main#0" expanded="false" />
             <element signature="class#MouseInput#0;class#Main#0" expanded="false" />
+            <element signature="e#3978#3979#0" expanded="true" />
+            <element signature="e#4012#4013#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -924,6 +932,8 @@
           <folding>
             <element signature="class#KeyboardInput#0;class#Main#0" expanded="false" />
             <element signature="class#MouseInput#0;class#Main#0" expanded="false" />
+            <element signature="e#3978#3979#0" expanded="true" />
+            <element signature="e#4012#4013#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1090,37 +1100,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_Client/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-          <folding>
-            <element signature="class#KeyboardInput#0;class#Main#0" expanded="false" />
-            <element signature="class#MouseInput#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_Client/src/Keyboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_Server/src/ClientListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_Server/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1147,25 +1130,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_Client/src/Client.java">
+    <entry file="file://$PROJECT_DIR$/_Client/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+          <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_Server/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/_Server/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_Shared/src/UserData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4878587">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
           <folding>
             <element signature="e#1683#1684#0" expanded="true" />
@@ -1174,11 +1157,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_Client/src/Game.java">
+    <entry file="file://$PROJECT_DIR$/_Server/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24944812">
-          <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.18763797">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jars/_Client_start.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_Client/src/Keyboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_Client/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jars/_Server_start.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_Client/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16887417">
+          <caret line="56" column="78" selection-start-line="56" selection-start-column="78" selection-end-line="56" selection-end-column="78" />
+          <folding>
+            <element signature="class#KeyboardInput#0;class#Main#0" expanded="false" />
+            <element signature="class#MouseInput#0;class#Main#0" expanded="false" />
+            <element signature="e#3978#3979#0" expanded="true" />
+            <element signature="e#4012#4013#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
