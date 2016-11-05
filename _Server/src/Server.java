@@ -7,9 +7,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
-    public static final int INTERVAL = 16;
+    public static final int INTERVAL = 4;
 
     private static int currentClientID = 0;
     private int port;
@@ -17,14 +18,14 @@ public class Server {
     private Main main;
     private ServerSocket serverSocket;
     //client threads
-    private volatile HashMap<Integer, ClientListener> tClientListeners; //SHASHMAP
+    private Map<Integer, ClientListener> tClientListeners; //SHASHMAP
     //threads
     private Timer tOutTimer;
     private Thread tClientConnect;
 
     public Server(Main main) {
         this.main = main;
-        this.tClientListeners = new HashMap<>();
+        this.tClientListeners = new ConcurrentHashMap<Integer, ClientListener>(32, 0.75f, 100);
         this.tOutTimer = new Timer("Server Out");
         this.tClientConnect = new Thread(new Runnable() {
             @Override

@@ -22,6 +22,9 @@ public class Game {
     }
 
     public void update(int delta){
+        if(!client.isConnected() && !userDatas.isEmpty()) {
+            userDatas.clear();
+        }
         if(!chatOn) {
             player.update();
         }

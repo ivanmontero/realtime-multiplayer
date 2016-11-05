@@ -3,8 +3,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GameData { // Managing of all user data
-    private static Map<Integer, UserData> userDatas = new ConcurrentHashMap<Integer, UserData>();
-    private static Map<Integer, Integer> messageDurations  = new ConcurrentHashMap<Integer, Integer>();
+    private static Map<Integer, UserData> userDatas = new ConcurrentHashMap<Integer, UserData>(32, 0.75f, 100);
+    private static Map<Integer, Integer> messageDurations  = new ConcurrentHashMap<Integer, Integer>(32, 0.75f, 100);
 
     public static final int MESSAGE_TIME = 16 * 60 * 5; // for messages
 
