@@ -4,7 +4,7 @@ public class ServerListener extends Thread {
 
     private Client client;
     private ObjectInputStream socketIn;
-    private long last_time;
+    //private long last_time;
 
     public ServerListener(Client client, ObjectInputStream socketIn){
         super("Server Listener");
@@ -25,12 +25,12 @@ public class ServerListener extends Thread {
                     client.stop();
                 }
             }
-
+            /*
             long time = System.nanoTime();
             int delta_time = (int) ((time - last_time) / 1000000);
             System.out.println(delta_time);
             last_time = time;
-
+            */
         }
     }
 

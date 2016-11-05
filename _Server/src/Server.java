@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
-    public static final int INTERVAL = 4;
+    public static final int INTERVAL = 16;
 
     private static int currentClientID = 0;
     private int port;
@@ -34,6 +34,7 @@ public class Server {
                 while (!Thread.currentThread().isInterrupted()) {
                     try{
                         Socket socket = serverSocket.accept();
+                        socket.setPerformancePreferences(0, 2, 1);
                         ClientListener cl
                                 = new ClientListener(Server.this, socket, ++currentClientID);
                         System.out.println("[INFO] Client " + socket.getLocalAddress().getHostAddress()
@@ -53,10 +54,12 @@ public class Server {
         this.port = port;
         try {
             serverSocket = new ServerSocket(port);
+            System.out.println(serverSocket.getReceiveBufferSize());
         } catch (IOException e) {
             System.err.println("[ERROR] Failed to bind to port " + port);
             return false;
         }
+        serverSocket.setPerformancePreferences(0, 2, 1);
         System.out.println("[INFO] Successfully bound to port " + port);
         System.out.println("[INFO] Server public IP: " + getPublicIPAddress());
         return true;
@@ -71,7 +74,7 @@ public class Server {
                 sendPacket();
             }
         }, 0, INTERVAL);
-        System.out.println("[INFO] Server put thread started");
+        System.out.println("[INFO] Server out thread started");
     }
 
     public void sendPacket(){
