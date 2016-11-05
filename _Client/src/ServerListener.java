@@ -18,6 +18,7 @@ public class ServerListener extends Thread {
                 //ServerPacket sp = (ServerPacket) socketIn.readObject();
                 client.processPacket((ServerPacket) socketIn.readObject());
             } catch (Exception e){
+                e.printStackTrace();
                 if(client.isConnected()) {
                     System.err.println("Connection lost to server");
                     client.setConnected(false);

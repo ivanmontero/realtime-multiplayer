@@ -121,7 +121,9 @@ public class Game {
     }
 
     public void updateClientData(UserData client) {
-        player.setText(client.getMessage());
+        if(client != null) {
+            player.setText(client.getMessage());
+        }
     }
 
     public ClientPacket createPacket(){ // important
