@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Client{
-    public static final boolean DEBUG_MODE = false;          // Testing purposes
+    public static final boolean DEBUG_MODE = true;          // Testing purposes
     public static final String SERVER_IP = "67.170.25.33";
     //client
     private Main main;

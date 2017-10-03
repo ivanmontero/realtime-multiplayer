@@ -9,7 +9,8 @@ import java.net.InetAddress;
  * proper exiting
  * chat program
  */
-
+// Ivan Montero
+// 11/4/2016
 public class Main extends JPanel implements ActionListener{
     private static Main instance;
     private static boolean isLocalhost;

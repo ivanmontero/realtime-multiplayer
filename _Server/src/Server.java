@@ -54,7 +54,6 @@ public class Server {
         this.port = port;
         try {
             serverSocket = new ServerSocket(port);
-            System.out.println(serverSocket.getReceiveBufferSize());
         } catch (IOException e) {
             System.err.println("[ERROR] Failed to bind to port " + port);
             return false;
@@ -145,7 +144,7 @@ public class Server {
     }
 
     public String getPublicIPAddress() {
-        String ip = "";
+        String ip;
         try {
             URL whatsMyIP = new URL("http://checkip.amazonaws.com");
             ip = (new BufferedReader(new InputStreamReader(whatsMyIP.openStream()))).readLine();
